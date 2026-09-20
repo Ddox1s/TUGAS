@@ -1,0 +1,38 @@
+package main
+
+import(
+
+	"fmt"
+	"sort"
+	"time"
+)
+
+func main() {
+	
+	kotak := []int{3, 1, 2}
+	
+	var luarKotak []int
+
+	fmt.Println("--- ALUR PENYELESAIAN ---")
+
+	for len(kotak) > 0 {
+		
+		bolaDiambil := kotak[0]
+		
+		kotak = kotak[1:] 
+		
+		luarKotak = append(luarKotak, bolaDiambil)
+		
+		fmt.Printf("Mengambil bola berangka %d dari kotak \n", bolaDiambil)
+	}
+
+	fmt.Println("\nBola yang sudah di luar kotak (belum urut):", luarKotak)
+
+	sort.Ints(luarKotak)
+	
+	fmt.Print("Menyusun Bola.. \n")
+	
+	time.Sleep (2 * time.Second)
+
+	fmt.Println("Bola yang sudah disusun terurut:", luarKotak)
+}
